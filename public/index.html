@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="online ide cum compiler for mutiple languages" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online IDE</title>
+    <link rel="stylesheet" href="ui/css/style.css" />
+</head>
+
+<body>
+
+    <div class="header">
+        <h2> Online IDE </h2>
+        <a style="color: white;" href="https://github.com/abinashrasonowal/online_ide" target="_blank"><img
+                style="width: 14px;" src="./ui/images/github.png" alt=""> Github rep</a>
+    </div>
+
+    <div class="container language_change">
+        Theme: &nbsp; 
+        <div class="container">
+            <button style="cursor: pointer;" value="0" id="theme">
+                <img onclick="changetheme()" style="width: 20px;" src="./ui/images/theme.png" alt="theme">
+            </button>      
+        </div>
+        &nbsp; &nbsp;
+        Select Language:
+        &nbsp; &nbsp;
+        <div class="select">
+            <div id="fild">
+                <div id="selected"><img src="./ui/images/c.png" alt="">&nbsp C</div>
+                <img id="arrow" style="width: 15px;" src="./ui/images/arrow.png" alt="">
+            </div>
+            <div id="list" class="hide">
+                <li value='1' class="options"><img src="./ui/images/c.png" alt="">&nbsp C</li>
+                <li value="2" class="options"><img src="./ui/images/cpp.ico" alt="">&nbsp C++</li>
+                <li value="3" class="options"><img src="./ui/images/java.png" alt="">&nbsp Java</li>
+                <li value="4" class="options"><img src="./ui/images/php.png" alt="">&nbsp php</li>
+                <li value="5" class="options"><img src="./ui/images/python.png" alt="">&nbsp Python</li>
+                <li value="6" class="options"><img src="./ui/images/node.png" alt="">&nbsp Node Js</li>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="editor" id="editor"></div>
+        <div class="container3 container">
+            <div onmouseover="dark()" onmouseout="light()" onclick="executeCode()" id="button-container">
+                <div class="btn">
+                    <img src="./ui/images/run.png" alt="">&nbsp;
+                    <p>RUN</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container container3">
+        <div class="container5">
+            <div class="container2">
+                <div class="container">
+                    <button class="btn" title="paste input" onclick="pastein()">paste</button>
+                </div>
+            </div>
+
+            <div class="input-output-box">
+                <textarea class="input-output" id="input"
+                    placeholder="type your input here if required or leave it"></textarea>
+            </div>
+        </div>
+
+        <div class="container5">
+            <div class="container2">
+                <div class="container">
+                    <button class="btn" title="copy output" onclick="copy()">copy</button>
+                </div>
+                <div class="container">
+                    <button class="btn" title="clear output" onclick="clearout()">clear</button>
+                </div>
+                <div class="hide" id="message">
+                    <div class="alert">
+                        output copied!
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-output-box">
+                <textarea disabled class="input-output" id="output"
+                placeholder="output will be shown here"></textarea>
+            </div>
+        </div>
+
+    </div>
+
+    <hr>
+    <footer id="footer" class="footer">
+        <div class="copyright-text">© Copyright 2023, All Rights Reserved
+        </div>
+    </footer>
+    <hr>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="ui/js/lib/ace.js"></script>
+    <script src="ui/js/lib/theme-monokai.js"></script>
+    <script src="app/compiler.js"></script>
+</body>
+
+</html>
